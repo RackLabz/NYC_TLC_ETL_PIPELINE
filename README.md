@@ -1,4 +1,4 @@
-# NYC TLC Taxi Trips — ETL Pipeline (Docker + PostgreSQL)
+# NYC TLC Taxi Trips: ETL Pipeline (Docker + PostgreSQL)
 
 An end-to-end ETL pipeline using NYC TLC Yellow Taxi trip records:
 - **Ingest** monthly trip data + zone lookup
