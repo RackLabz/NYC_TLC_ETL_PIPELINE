@@ -8,12 +8,12 @@ An end-to-end ETL pipeline using NYC TLC Yellow Taxi trip records:
 - **Validate** with post-load checks & sample analytics
 
 ## Repo structure
-- `notebooks/` — the project notebook (explain + explore)
-- `src/etl.py` — runnable ETL entrypoint (what Docker executes)
-- `docker-compose.yml` — starts Postgres + ETL runner
-- `.env.example` — environment variables template
+- `notebooks/`: the project notebook (explain + explore)
+- `src/etl.py`: runnable ETL entrypoint (what Docker executes)
+- `docker-compose.yml`: starts Postgres + ETL runner
+- `.env.example`: environment variables template
 
-## Quickstart (Docker) — recommended
+## Quickstart (Docker) recommended
 ### 1) Install Docker Desktop
 - Windows/macOS: install Docker Desktop and ensure it is running.
 
