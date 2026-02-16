@@ -1,0 +1,37 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: nyc_taxi_pg
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PG_USER} -d ${PG_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  etl:
+    build: .
+    container_name: nyc_taxi_etl
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PG_USER: ${PG_USER}
+      PG_PASSWORD: ${PG_PASSWORD}
+      PG_HOST: postgres
+      PG_PORT: ${PG_PORT}
+      PG_DB: ${PG_DB}
+      TRIPS_MONTH: ${TRIPS_MONTH}
+    volumes:
+      - ./data:/app/data
+    command: ["python", "-m", "src.etl"]
+
+volumes:
+  pgdata:

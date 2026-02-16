@@ -1,0 +1,16 @@
+# secrets
+.env
+
+# data
+data/
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+.envrc
+
+# OS
+.DS_Store
+Thumbs.db
