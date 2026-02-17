@@ -1,3 +1,7 @@
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
+
 # NYC TLC Taxi Trips: ETL Pipeline (Docker + PostgreSQL)
 
 An end-to-end ETL pipeline using NYC TLC Yellow Taxi trip records:
