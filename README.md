@@ -73,8 +73,10 @@ SELECT * FROM dim_taxi_zones LIMIT 5;
 ## Local (non-Docker) run (optional)
 ```bash
 python -m venv .venv
-# Windows:
-.\.venv\Scripts\activate
+# Windows (PowerShell):
+.\.venv\Scripts\Activate.ps1
+# Windows (CMD):
+.\.venv\Scripts\activate.bat
 pip install -r requirements.txt
 cp .env.example .env
 python -m src.etl
